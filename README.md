@@ -14,7 +14,7 @@ Spring PetClinic을 Docker 이미지로 만들고 컨테이너로 실행한 뒤,
 
 1. 다른 환경에서도 같은 서버를 실행할 수 있는가 → 이미지로 만들어 컨테이너로 실행
 2. 로컬 서버와 컨테이너 서버를 동시에 띄울 수 있는가 → `8081:8080` 포트 매핑
-3. 서버가 갑자기 죽으면 어떻게 되는가 → 재시작 정책 후 강제 종료 → 부활 확인
+3. 서버가 갑자기 죽으면 어떻게 되는가 → 재시작 정책 + 크래시 재현 → 자동 부활 확인
 4. 자원을 너무 많이 쓰면 어떻게 제한하는가 → CPU·메모리 제한 + `docker stats`
 5. 서버가 안 열리면 어디를 확인하는가 → `ps` / `logs` / `inspect`
 6. 만든 이미지를 다른 컴퓨터에서도 실행할 수 있는가 → `save` / `load` (+ Hub는 선택)
@@ -41,6 +41,6 @@ Spring PetClinic을 Docker 이미지로 만들고 컨테이너로 실행한 뒤,
 - [Docker 공식 문서](https://docs.docker.com/) — 명령어가 헷갈릴 때 최종 근거.
 - 1주차 자료: `likelion-server-study/WEEK1` — PetClinic 로컬 실행·상태 확인 (이번 주의 전제)
 
-> 이 자료의 모든 명령어는 **Windows(PowerShell)** 기준으로 작성했다.
-> macOS/Linux 사용자는 `.\gradlew.bat` → `./gradlew`, 경로 구분자만 바꿔주면 동일하게 동작한다.
+> 이 자료의 모든 명령어는 **macOS/Linux(터미널)** 기준으로 작성했다.
+> Windows(PowerShell) 사용자는 `./gradlew` → `.\gradlew.bat`, `grep` → `findstr`, `rm` → `del`로 바꿔주면 동일하게 동작한다.
 > 세부 차이는 트러블슈팅 문서에 정리해뒀다.
